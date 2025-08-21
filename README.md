@@ -1,30 +1,27 @@
-# Portfolio (HTML & CSS Only)
+# Dynamic Quiz App (HTML + CSS + JavaScript)
 
-A multi-page, responsive portfolio built for CS 311 – Web Programming (Summer 2025).
+CS 311 – Web Programming (Summer 2025) — Assignment No.2
 
 ## Pages
-- `index.html` – Home (intro + navbar)
-- `about.html` – About Me (bio + photo + timeline using `<table>`)
-- `projects.html` – At least 3 projects in responsive cards
+- `index.html` — Landing & subject selection (+ username input)
+- `quiz.html` — Quiz interface (timer, Next/Prev, validation, auto-advance on timeout)
+- `result.html` — Final score, percentage, correct/incorrect review, save to leaderboard
+- `leaderboard.html` — Top 5 scores (localStorage)
 
-## Tech & Features
-- Semantic HTML5
-- CSS Flexbox & Grid
-- Responsive: Desktop (3 cols) → Tablet (2 cols) → Mobile (1 col)
-- CSS animations (fade-in cards, hover scaling on buttons)
-- Reusable navbar on every page
+## Data
+- `data.js` — 3 subjects × 10 MCQs each (stored as a JS object)
 
-## How to Deploy with GitHub Pages
-1. Create a new GitHub repository (public).
-2. Upload all files from the `portfolio/` folder (keep the same structure).
-3. In **Settings → Pages**, set **Branch** = `main` (or `master`) and **Root`** (not `docs`).
-4. Save; wait for the green link to appear (your live site URL).
+## Features Checklist
+- [x] 15s countdown per question (auto-advance when time runs out)
+- [x] Next/Previous navigation
+- [x] Prevent final submit with unanswered questions
+- [x] Result shows score, percentage, correct vs incorrect answers
+- [x] Leaderboard saved in `localStorage` (top 5, descending)
+- [x] Responsive CSS (desktop/tablet/mobile) + simple animations
+- [x] Retake quiz / choose another subject
 
-## Replace Images
-- Put your own photo at `images/profile.jpg` (square looks best).
-- Replace `images/project1.jpg`, `images/project2.jpg`, `images/project3.jpg` with your project images.
+## Deploy (GitHub Pages)
+1. Create a public repo and upload all files in `quiz-app/`.
+2. In **Settings → Pages**, set the branch to `main` (or `master`) and the root to `/`.
+3. Wait for the live URL to appear and share it.
 
-## Screenshots for PDF
-After your site is live:
-- Take screenshots of Home, About, Projects.
-- Replace the placeholder images in the PDF (optional), or resubmit a PDF with your actual screenshots.

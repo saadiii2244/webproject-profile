@@ -2,56 +2,62 @@
 <html lang="en">
 <head>
   
-  <title>Saad Abdullah | Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Portfolio of Saad Abdullah - Web Developer & CS Student at UET Peshawar" />
+  <title>Quiz App | Landing</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <nav class="navbar container">
-      <a class="brand" href="index.html">Saad<span>Dev</span></a>
-      <input id="menu-toggle" type="checkbox"/>
-      <label class="menu-button-container" for="menu-toggle">
-        <div class="menu-button"></div>
-      </label>
-      <ul class="menu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <h1 class="brand">Quiz<span>Master</span></h1>
   </header>
 
-  <main>
-    <section class="hero container">
-      <div class="hero-text">
-        <h1 class="fade-in">Hi, I'm Saad 👋</h1>
-        <p class="subtitle fade-in-delay">
-          A Web Developer & CS student focused on clean, responsive interfaces.
-        </p>
-        <a href="projects.html" class="btn primary btn-pop">View My Work</a>
-      </div>
-      <div class="hero-visual">
-        <img src="images/profile pic.jpg" alt="Saad portrait" class="profile-pic shadow-pop" />
-      </div>
-    </section>
+  <main class="container">
+    <section class="landing card fade-in">
+      <h2>Choose a Subject</h2>
+      <p>Three subjects • 10 MCQs each • 15s per question</p>
+      <form class="subject-form" onsubmit="event.preventDefault(); startSelectedSubject();">
+        <div class="subject-grid">
+          <label class="subject">
+            <input type="radio" name="subject" value="html" checked>
+            <div class="subject-body">
+              <h3>HTML</h3>
+              <p>Elements, semantics, forms</p>
+            </div>
+          </label>
+          <label class="subject">
+            <input type="radio" name="subject" value="css">
+            <div class="subject-body">
+              <h3>CSS</h3>
+              <p>Selectors, layout, responsiveness</p>
+            </div>
+          </label>
+          <label class="subject">
+            <input type="radio" name="subject" value="javascript">
+            <div class="subject-body">
+              <h3>JavaScript</h3>
+              <p>Basics, DOM, ES6</p>
+            </div>
+          </label>
+        </div>
 
-    <section class="skills container">
-      <h2>Skills</h2>
-      <div class="chip-row">
-        <span class="chip">HTML5</span>
-        <span class="chip">CSS3</span>
-        <span class="chip">Flexbox</span>
-        <span class="chip">Grid</span>
-        <span class="chip">Responsive Design</span>
+        <div class="cta-row">
+          <input type="text" id="username" class="input" placeholder="Enter your name (for leaderboard)" required>
+          <button class="btn primary">Start Quiz</button>
+        </div>
+      </form>
+
+      <div class="links">
+        <a href="leaderboard.html" class="btn ghost">View Leaderboard</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© 2025 Saad Abdullah · <a href="https://github.com/">GitHub</a></p>
-    </div>
-  </footer>
+  <script>
+    function startSelectedSubject(){
+      const sub = document.querySelector('input[name="subject"]:checked').value;
+      const name = document.getElementById('username').value.trim() || "Anonymous";
+      localStorage.setItem('currentUser', name);
+      window.location.href = 'quiz.html?subject=' + encodeURIComponent(sub);
+    }
+  </script>
 </body>
 </html>

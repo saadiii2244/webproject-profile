@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="brand">Quiz<span>Master</span></h1>
+  </header>
+
+  <main class="container">
+    <section class="card white result-box">
+      <div class="quiz-header">
+        <h2 id="subject-title">Subject</h2>
+        <div id="timer" class="timer">15</div>
+      </div>
+
+      <div id="progress" class="progress">Question 1 / 10</div>
+
+      <div id="question-box" class="question"></div>
+      <div id="options-box" class="options"></div>
+
+      <div class="nav-row">
+        <button id="prev-btn" class="btn">Previous</button>
+        <button id="next-btn" class="btn">Next</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
